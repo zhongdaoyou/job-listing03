@@ -4,6 +4,8 @@ class Job < ApplicationRecord
   validates :wage_lower_bound, presence: true
   validates :wage_lower_bound, numericality: { greater_than: 0}
 
+  has_many :resumes
+
   def render_job_status(job)
   if job.is_hidden
     "(Hidden)"
